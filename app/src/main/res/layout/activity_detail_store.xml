@@ -20,12 +20,13 @@
         android:text="가게이름"/>
 
     <TextView
+        android:id="@+id/storeNameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="가게 이름 자리"
-        android:textSize="20sp"
         android:layout_marginTop="5dp"
-        android:textColor="@color/black"/>
+        android:text="가게 이름 자리"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
