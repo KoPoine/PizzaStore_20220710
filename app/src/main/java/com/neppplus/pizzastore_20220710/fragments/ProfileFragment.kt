@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 class ProfileFragment : Fragment() {
 
     val REQ_FOR_NICKNAME = 1000
+    val REQ_FOR_PHONENUM = 1001
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,9 +26,15 @@ class ProfileFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         changeNickBtn.setOnClickListener {
             val myIntent = Intent(requireContext(), ProfileActivity::class.java)
             startActivityForResult(myIntent, REQ_FOR_NICKNAME)
+        }
+
+        changePhoneNumBtn.setOnClickListener {
+            val myIntent = Intent(requireContext(), ProfileActivity::class.java)
+            startActivityForResult(myIntent, REQ_FOR_PHONENUM)
         }
     }
 
