@@ -10,7 +10,7 @@ import com.neppplus.pizzastore_20220710.DetailStoreActivity
 import com.neppplus.pizzastore_20220710.R
 import com.neppplus.pizzastore_20220710.StoreData
 import com.neppplus.pizzastore_20220710.adapters.StoreListAdapter
-import kotlinx.android.synthetic.main.fragment_pizza.*
+import kotlinx.android.synthetic.main.fragment_chicken.*
 
 class ChickenFragment : Fragment() {
 
@@ -39,9 +39,9 @@ class ChickenFragment : Fragment() {
 
 //        멤버변수로 생성한 리스트뷰어댑터 객체화
         mStoreListAdapter = StoreListAdapter(requireContext(), R.layout.store_list_item, mList)
-        pizzaStoreListView.adapter = mStoreListAdapter
+        chickenStoreListView.adapter = mStoreListAdapter
 
-        pizzaStoreListView.setOnItemClickListener { adapterView, view, i, l ->
+        chickenStoreListView.setOnItemClickListener { adapterView, view, i, l ->
 //            인텐트로 현제 액티비티에서 DetailStoreActivity로 이동하는 코드
             val myIntent = Intent(requireContext(), DetailStoreActivity::class.java)
             myIntent.putExtra("storeData", mList[i])

@@ -2,6 +2,7 @@ package com.neppplus.pizzastore_20220710.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,9 @@ class PizzaFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+//        viewPager에 의해 피자 프래그먼트가 사라질때, mList도 같이 클리어 되도록
+//        mList.clear()
+
         mList.add(StoreData("피자헛", 4.2, "1588-5588",
             "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FnkQca%2FbtqwVT4rrZo%2FymhFqW9uRbzrmZTxUU1QC1%2Fimg.jpg"))
         mList.add(StoreData("파파존스 ", 4.5, "1577-8080",
@@ -51,5 +55,4 @@ class PizzaFragment : Fragment() {
             startActivity(myIntent)
         }
     }
-
 }

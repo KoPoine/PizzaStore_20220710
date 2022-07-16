@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         mPagerAdapter = MainViewPagerAdapter(supportFragmentManager)
         mainViewPager.adapter = mPagerAdapter
 
+        mainViewPager.offscreenPageLimit = 3
+
         mainTabLayout.setupWithViewPager(mainViewPager)
     }
 }
