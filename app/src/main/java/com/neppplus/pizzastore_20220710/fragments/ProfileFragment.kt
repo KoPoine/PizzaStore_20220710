@@ -40,10 +40,16 @@ class ProfileFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQ_FOR_NICKNAME) {
-            if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK) {
+
+            if (requestCode == REQ_FOR_NICKNAME) {
                 val changedNick = data?.getStringExtra("data")
                 nicknameTxt.text = changedNick
+            }
+
+            if (requestCode == REQ_FOR_PHONENUM) {
+                val changePhoneNum = data?.getStringExtra("data")
+                phoneNumTxt.text = changePhoneNum
             }
         }
     }
