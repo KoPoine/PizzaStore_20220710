@@ -40,10 +40,12 @@ class PizzaFragment : Fragment() {
             "https://www.pngplay.com/wp-content/uploads/6/Dominos-Pizza-Logo-Background-PNG-Image.png"
         ))
 
+//        멤버변수로 생성한 리스트뷰어댑터 객체화
         mStoreListAdapter = StoreListAdapter(requireContext(), R.layout.store_list_item, mList)
         pizzaStoreListView.adapter = mStoreListAdapter
 
         pizzaStoreListView.setOnItemClickListener { adapterView, view, i, l ->
+//            인텐트로 현제 액티비티에서 DetailStoreActivity로 이동하는 코드
             val myIntent = Intent(requireContext(), DetailStoreActivity::class.java)
             myIntent.putExtra("storeData", mList[i])
             startActivity(myIntent)
