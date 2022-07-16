@@ -11,9 +11,9 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
 
         changeBtn.setOnClickListener {
-            val inputNick = changedNickEdt.text.toString()
+            val inputData = changedNickEdt.text.toString()
             val resultIntent = Intent()
-            resultIntent.putExtra("nick", inputNick)
+            resultIntent.putExtra("data", inputData)
             setResult(RESULT_OK, resultIntent)
             finish()
         }

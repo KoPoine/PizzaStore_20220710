@@ -42,7 +42,7 @@ class ProfileFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQ_FOR_NICKNAME) {
             if (resultCode == Activity.RESULT_OK) {
-                val changedNick = data?.getStringExtra("nick")
+                val changedNick = data?.getStringExtra("data")
                 nicknameTxt.text = changedNick
             }
         }
