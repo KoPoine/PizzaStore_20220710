@@ -21,8 +21,8 @@ class DetailStoreActivity : AppCompatActivity() {
 
 //        주문하기 버튼을 눌렀을때
         callBtn.setOnClickListener {
-            val myUri = Uri.parse("tel:${phoneNumTxt.text}")
-            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
+            val myUri = Uri.parse("https://naver.com")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
             startActivity(myIntent)
         }
     }

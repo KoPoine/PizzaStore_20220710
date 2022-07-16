@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.neppplus.pizzastore_20220710.R
 import com.neppplus.pizzastore_20220710.StoreData
@@ -24,6 +25,7 @@ class StoreListAdapter (
 
         val nameTxt = row.findViewById<TextView>(R.id.nameTxt)
         val scoreTxt = row.findViewById<TextView>(R.id.scoreTxt)
+        val profileImg = row.findViewById<ImageView>(R.id.profileImg)
 
         nameTxt.text = mList[position].name
         scoreTxt.text = "(${mList[position].score})"
