@@ -1,9 +1,13 @@
 package com.neppplus.pizzastore_20220710
 
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.normal.TedPermission
 import kotlinx.android.synthetic.main.activity_detail_store.*
 
 class DetailStoreActivity : AppCompatActivity() {
@@ -21,9 +25,24 @@ class DetailStoreActivity : AppCompatActivity() {
 
 //        주문하기 버튼을 눌렀을때
         callBtn.setOnClickListener {
-            val myUri = Uri.parse("https://naver.com")
-            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
-            startActivity(myIntent)
+            val pl = object : PermissionListener {
+                //                권한을 획득했을 경우 진행할 코드
+                override fun onPermissionGranted() {
+                    val myUri = Uri.parse("tel:${phoneNumTxt.text}")
+                    val myIntent = Intent(Intent.ACTION_CALL, myUri)
+                    startActivity(myIntent)
+                }
+
+                //                권한 획득에 실패했을때 진행할 코드
+                override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+                    Toast.makeText(this@DetailStoreActivity, "권한이 없습니다.", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            TedPermission.create()
+                .setPermissionListener(pl)
+                .setPermissions(Manifest.permission.CALL_PHONE)
+                .check()
         }
     }
 }
